@@ -6,10 +6,10 @@ class Settings(BaseSettings):
     APP_NAME: str = "Cloud Cartography NL Query System"
     API_V1_STR: str = "/api/v1"
     
-    # Neo4j settings
-    NEO4J_URI: str = os.environ.get("NEO4J_URI", "bolt://neo4j:7687")
-    NEO4J_USER: str = os.environ.get("NEO4J_USER", "neo4j")
-    NEO4J_PASSWORD: str = os.environ.get("NEO4J_PASSWORD", "password")
+    # Neo4j settings - use the working credentials
+    NEO4J_URI: str = "bolt://localhost:7690"  # This port worked in your test
+    NEO4J_USER: str = "neo4j"
+    NEO4J_PASSWORD: str = "ssrtLvuf43123!"  # Use the same password that worked in your test
     
     # AWS settings
     AWS_ACCESS_KEY_ID: str = os.environ.get("AWS_ACCESS_KEY_ID", "")
@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     
     # OpenAI settings
     OPENAI_API_KEY: str = os.environ.get("OPENAI_API_KEY", "")
-    OPENAI_MODEL: str = os.environ.get("OPENAI_MODEL", "gpt-4")
+    OPENAI_MODEL: str = os.environ.get("OPENAI_MODEL", "gpt-3.5-turbo")
     
     # CORS settings
     CORS_ORIGINS: list = ["http://localhost:3000", "http://frontend:3000"]
